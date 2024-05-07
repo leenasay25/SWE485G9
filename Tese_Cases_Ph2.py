@@ -7,7 +7,7 @@ class Test:
 import time
 
 class Test:
-    hun = Assignment_Problem.HungarianAlgorithm()
+    hun = Assignment_Problem_Ph2.HungarianAlgorithm()
     
     def evaluate(self, cost_matrix):
         '''
