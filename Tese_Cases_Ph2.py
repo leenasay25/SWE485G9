@@ -37,7 +37,22 @@ class Test:
         print(f"Assignment problem cost result: {ans:.0f}")
         print(f"Computational time: {computational_time} seconds")
             
-
+    def compare_with_local_search(self):
+        cost_matrix = np.array([
+                [51, 92, 14, 71, 60, 20, 82, 86, 74],
+                [74, 87, 99, 23, 2, 21, 52, 1, 87],
+                [29, 37, 1, 63, 59, 20, 32, 75, 57],
+                [21, 88, 48, 90, 58, 41, 91, 59, 79],
+                [14, 61, 61, 46, 61, 50, 54, 63, 2],
+                [50, 6, 20, 72, 38, 17, 3, 88, 59],
+                [13, 8, 89, 52, 1, 83, 91, 59, 70],
+                [43, 7, 46, 34, 77, 80, 35, 49, 3],
+                [1, 5, 53, 3, 53, 92, 62, 17, 89]
+                ])
+        print("------------------Compare with local search---------------------")
+        print("Cost matrix of size 9x9")
+        print(cost_matrix)
+        self.evaluate(cost_matrix) 
             
     def testcase1(self):
             array_5x5 = np.random.randint(0, 100, size=(5, 5))
@@ -102,6 +117,7 @@ class Test:
      Perform the testing by calling the test cases
      '''
      np.random.seed(42)
+     self.compare_with_local_search()
      self.testcase1()
      self.testcase2()
      self.testcase3()
