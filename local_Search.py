@@ -1,6 +1,7 @@
 import numpy as np
 import copy
 import random
+import time
 
 class LocalSearch:
 
@@ -69,17 +70,24 @@ if __name__ == "__main__":
         np.random.seed(42)
         size = LocalSearch.generate_random_above_10()
         cost_matrix = np.random.randint(0, 100, size=(size, size))
-        print("Cost matrix:")
         print("Cost matrix of size", size,"x", size)
         print(cost_matrix)
-
+        
+        # Record start time
+        start_time = time.time()
         local_search = LocalSearch()
         best_assignment, best_cost = local_search.local_search(cost_matrix, max_iterations=1000)
-
+        
+        # Record end time
+        end_time = time.time()
+        
+        # Calculate computational time
+        computational_time = end_time - start_time
         print("\nBest assignment found:")
         print(best_assignment)
-        print("Assignment problem best cost result:", best_cost)
 
         binary_matrix = local_search.binary_assignment_matrix(best_assignment, cost_matrix.shape[0], cost_matrix.shape[1])
         print("\nBinary assignment matrix:")
         print(binary_matrix)
+        print("Assignment problem best cost result:", best_cost)
+        print(f"Computational time: {computational_time} seconds")
