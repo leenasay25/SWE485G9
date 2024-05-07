@@ -1,8 +1,8 @@
-import Assignment_Problem_Ph2 
+import Assignment_Problem_Ph2
 import numpy as np
 
 class Test:
-    hun=Assignment_Problem.HungarianAlgorithm()
+    hun=Assignment_Problem_Ph2.HungarianAlgorithm()
     
 import time
 
